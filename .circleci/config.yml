@@ -11,12 +11,15 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "${CI_GIT_USER_KEY_FINGERPRINT}"
       - checkout
       - run: ./bin/publish-updated-projects.sh
 
 workflows:
   version: 2
-  update-dependant-projects:
+  master-commit:
     jobs:
       - build-and-publish
   hourly-project-update:
