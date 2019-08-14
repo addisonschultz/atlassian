@@ -54,6 +54,6 @@ done
 # If a project was updated we need to update the repository to reflect the new yarn.lock files
 if [ "$projectWasPublished" = true ]; then
   git add .
-  git commit -m 'Republished Framer project [skip ci'
+  git commit -m 'Republished Framer project [skip ci]'
   git push origin HEAD
 fi
